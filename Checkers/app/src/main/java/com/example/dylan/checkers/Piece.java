@@ -15,6 +15,9 @@ public class Piece{
 	public static final String LIGHT = "Light";
 	
 	
+	/**
+	 * @param color
+	 */
 	public Piece(String color){
 		if(!(color.equals(Piece.DARK) || color.equals(Piece.LIGHT))){
 			System.out.println("The provided color for piece is not valid: " + color);
@@ -25,23 +28,38 @@ public class Piece{
 		this.placedCell = null;
 	}
 	
+	/**
+	 * @param givenCell
+	 */
 	public void setCell(Cell givenCell){
 		this.placedCell = givenCell;
 	}
 	
+	/**
+	 * @return
+	 */
 	public Cell getCell(){
 		return this.placedCell;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getColor(){
 		return this.color;
 	}
 	
+	/**
+	 * @return
+	 */
 	public boolean isKing(){
 		return this.isKing;
 	}
 
 	//sets this piece as king
+	/**
+	 * 
+	 */
 	public void makeKing(){
 		this.isKing = true;
 	}
@@ -65,6 +83,9 @@ public class Piece{
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj){
 		if(!(obj instanceof Piece)){
